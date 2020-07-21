@@ -1,0 +1,13 @@
+{
+  "name": "javascript_interviews",
+  "version": "1.0.0",
+  "description": "cool js interview examples",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^26.1.0"
+  }
+}
