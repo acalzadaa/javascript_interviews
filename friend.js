@@ -4,13 +4,7 @@
 // Ex: Input = ["Ryan", "Kieran", "Jason", "Yous"], Output = ["Ryan", "Yous"]
 
 function friend(friends) {
-
-    return friends.reduce((onlyFriends, currentElem) => {
-        if (currentElem.length === 4) {
-            onlyFriends.push(currentElem);
-        }
-        return onlyFriends;
-    }, [])
+    return friends.filter(n => n.length === 4)
 }
 
 console.log(friend(["Ryan", "Kieran", "Jason", "Yous"]));
