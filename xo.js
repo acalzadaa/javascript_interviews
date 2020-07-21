@@ -8,9 +8,7 @@ function xo(str) {
         return count;
     }, {});
 
-
     return result['x'] === result['o'] ? true: false;
-
 }
 
 module.exports = xo;
