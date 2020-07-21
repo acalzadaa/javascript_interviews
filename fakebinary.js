@@ -2,16 +2,19 @@
 // Return the resulting string.
 
 function fakeBin(x) {
-
     let returnValue = "";
+    return x.split("").reduce((initValue, currentValue) => {
 
-    x.split("").forEach(element => {
-        returnValue += parseInt(element) < 5 ? '0' : '1';
+        if(returnValue.length === 0){
+            returnValue += parseInt(initValue) < 5 ? '0' : '1';
+        }
+
+        returnValue += parseInt(currentValue) < 5 ? '0' : '1';
+
+        return returnValue;
     });
-
-    return returnValue;
 }
 
-console.log(fakeBin("18273"));
+console.log(fakeBin("982734"));
 
 module.exports = fakeBin;
