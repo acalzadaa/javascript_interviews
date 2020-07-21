@@ -3,18 +3,21 @@
 
 function fakeBin(x) {
     let returnValue = "";
-    return x.split("").reduce((initValue, currentValue) => {
 
-        if(returnValue.length === 0){
-            returnValue += parseInt(initValue) < 5 ? '0' : '1';
-        }
+    if (x.length == 1) {
+        return parseInt(x) < 5 ? '0' : '1'
+    } else {
+        return x.split("").reduce((initValue, currentValue) => {
+            if (returnValue.length === 0) {
+                returnValue += parseInt(initValue) < 5 ? '0' : '1';
+            }
 
-        returnValue += parseInt(currentValue) < 5 ? '0' : '1';
-
-        return returnValue;
-    });
+            returnValue += parseInt(currentValue) < 5 ? '0' : '1';
+            return returnValue;
+        });
+    }
 }
 
-console.log(fakeBin("982734"));
+console.log(fakeBin("4"));
 
 module.exports = fakeBin;
