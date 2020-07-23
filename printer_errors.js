@@ -1,13 +1,7 @@
 function printerError(s) {
-    let total_length = s.length;
-    let match = s.match(/[n-z]/g);
-    if (match) {
-        return match.length + "/" + total_length;
-    } else {
-        return "0/" + total_length;
-    }
+    return (s.match(/[n-z]/g) || []).length + "/" + s.length;
 }
 
 module.exports = printerError;
 
-console.log(printerError("abcnop"));
+console.log(printerError("abcd"));
