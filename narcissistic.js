@@ -3,16 +3,11 @@ each raised to the power of the number of digits in a given base.
 In this Kata, we will restrict ourselves to decimal (base 10). */
 
 function narcissistic(value) {
-
-  let total = value.toString().split("")
-  let acum = 0;
-  for (let i = 0; i < total.length; i++) {
-    acum += total[i] ** total.length;
-  }
-
-  return value === acum ? true : false;
+  return value === value.toString().split("").reduce( (res, digit, idx, arr) => 
+    res += (digit ** arr.length)
+  ,0)
 }
 
-console.log(narcissistic(111));
+console.log(narcissistic(7));
 
 module.exports = narcissistic;
